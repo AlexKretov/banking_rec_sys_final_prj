@@ -1,0 +1,16 @@
+pandas==2.2.3
+numpy==2.2.4
+matplotlib==3.10.1
+scipy==1.15.2
+scikit-learn==1.6.1
+requests
+load_dotenv==0.1.0
+dotenv==0.9.9
+woodwork==0.31.0
+uvicorn==0.34.2
+fastapi
+featuretools
+prometheus_client
+pyarrow
+prometheus_fastapi_instrumentator
+psutil

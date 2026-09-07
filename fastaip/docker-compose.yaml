@@ -1,0 +1,40 @@
+services:
+  ml_service:  
+    #используем файл с переменными среды
+    env_file:
+      - ./.env
+    # собираем образ с помощью Dockerfile
+    build:
+      dockerfile: Dockerfile
+    # перенаправялем порты
+    ports:
+      - "${VM_PORT}:${THE_PORT}"
+    volumes:
+      - ./metrics_reports:/home/ml_service/metrics_reports
+    ### добавьте:
+    hostname: app2
+  
+  # добавьте описание сервиса Prometheus:
+  prometheus:
+    image: prom/prometheus
+    env_file:
+      - ./.env
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - ${PROMETHEUS_PORT}:${PROMETHEUS_PORT}
+    volumes:
+      - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+    hostname: prometheus
+  grafana:
+        image: grafana/grafana
+        env_file:
+        - ./.env
+        ports:
+        - ${GRAFATA_PORT}:${GRAFATA_PORT}
+        environment:
+        - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+        - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASS}
+volumes:
+  ml_service: 
+    #external: true
