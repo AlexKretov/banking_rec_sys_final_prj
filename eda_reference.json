@@ -1,0 +1,116 @@
+{
+  "provenance": {
+    "kind": "saved_notebook_outputs_not_a_new_raw_data_run",
+    "repository": "AlexKretov/banking_rec_sys_final_prj",
+    "commit": "6f6b122c245f24be9a313c1491b753359f449abb",
+    "notebook": "eda.ipynb",
+    "cell_indices_zero_based": [
+      10,
+      11,
+      13
+    ],
+    "extracted_on_utc": "2026-09-07",
+    "note_ru": "Агрегаты переписаны из сохранённых text/plain outputs. Исходные Parquet в checkout отсутствуют; строки событий не восстанавливались. missing_share округлены в исходном выводе до 6 знаков."
+  },
+  "requested": {
+    "dataset_path": "dataset/small",
+    "day_begin": 1250,
+    "day_end": 1308,
+    "domains": [
+      "retail",
+      "marketplace",
+      "offers"
+    ],
+    "max_rows": 2000000
+  },
+  "observed": {
+    "rows": 2000000,
+    "days": [
+      1250
+    ],
+    "users": 189593,
+    "items_raw_id": 72371,
+    "columns": [
+      "user_id",
+      "item_id",
+      "action_type",
+      "subdomain",
+      "os",
+      "domain",
+      "day"
+    ],
+    "item_id_example": "nfmcg_8797298",
+    "missing_share_rounded": {
+      "subdomain": 0.663829,
+      "os": 0.663732,
+      "user_id": 0.0,
+      "action_type": 0.0,
+      "item_id": 0.0,
+      "domain": 0.0,
+      "day": 0.0
+    },
+    "by_domain": [
+      {
+        "domain": "marketplace",
+        "events": 672535,
+        "users": 78635,
+        "items": 71533
+      },
+      {
+        "domain": "offers",
+        "events": 1327465,
+        "users": 131036,
+        "items": 838
+      }
+    ],
+    "by_action": [
+      {
+        "domain": "offers",
+        "action_type": "view",
+        "events": 1284069
+      },
+      {
+        "domain": "marketplace",
+        "action_type": "view",
+        "events": 652666
+      },
+      {
+        "domain": "offers",
+        "action_type": "click",
+        "events": 35626
+      },
+      {
+        "domain": "marketplace",
+        "action_type": "click",
+        "events": 17453
+      },
+      {
+        "domain": "offers",
+        "action_type": "clickout",
+        "events": 7007
+      },
+      {
+        "domain": "marketplace",
+        "action_type": "clickout",
+        "events": 2222
+      },
+      {
+        "domain": "offers",
+        "action_type": "like",
+        "events": 763
+      },
+      {
+        "domain": "marketplace",
+        "action_type": "like",
+        "events": 194
+      }
+    ]
+  },
+  "code_review": {
+    "commit": "6f6b122c245f24be9a313c1491b753359f449abb",
+    "sha256": {
+      "tecd_pipeline.py": "2b6c33fe42265f773d76ef34a6f86504d6d0377c47cbbe31592180b355d55f78",
+      "fastaip/ml_service/app2.py": "1e808019daa0ff078ca77124d2b4248d3b7ee88337496fdd0892dbe5640d13f6"
+    }
+  }
+}
